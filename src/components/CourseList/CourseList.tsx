@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './CourseList.css';
 
-import { List } from 'semantic-ui-react';
+import { Item } from 'semantic-ui-react';
 
 import ICourse from '../../types/ICourse';
 import Course from '../Course/Course';
@@ -14,13 +14,13 @@ class CourseList extends React.Component<IProps, object> {
   public render() {
     return (
       <div className="CourseList">
-        <List divided={true} relaxed={true}>
+        <Item.Group>
           {
             this.props.courses.map((course: ICourse, ind: number) => {
               return <Course course={course} key={ind} />
             })
           }
-        </List>
+        </Item.Group>
       </div>
     );
   }

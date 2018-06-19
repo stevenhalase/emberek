@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { List } from 'semantic-ui-react';
+
+import { Item } from 'semantic-ui-react';
+
 import './Course.css';
 
 import ICourse from '../../types/ICourse';
+import CurriculumUnitList from '../CurriculumUnitList/CurriculumUnitList';
 
 interface IProps {
   course: ICourse;
@@ -11,13 +14,13 @@ interface IProps {
 class Course extends React.Component<IProps, object> {
   public render() {
     return (
-      <List.Item>
-        <List.Icon name='folder outline' size='large' verticalAlign='middle' />
-        <List.Content>
-          <List.Header as='a'>{this.props.course.name}</List.Header>
-          <List.Description as='a'>{this.props.course.description}</List.Description>
-        </List.Content>
-      </List.Item>
+      <Item>
+        <Item.Content>
+          <Item.Header as='a'>{this.props.course.name}</Item.Header>
+          <Item.Description as='a'>{this.props.course.description}</Item.Description>
+          <CurriculumUnitList curriculumunits={this.props.course.curriculum} />
+        </Item.Content>
+      </Item>
     );
   }
 }

@@ -10,12 +10,24 @@ class App extends React.Component<any, any> {
     this.state = {
       courses: [
         {
+          curriculum: [],
           description: `Learn your way around emberek's interface.`,
           name: `Getting Started`
         },{
+          curriculum: [
+            {
+              description: `Learn your way around the DOM.`,
+              name: `HTML5`,
+            },
+            {
+              description: `Learn how to style pages.`,
+              name: `CSS3`,
+            }
+          ],
           description: `Learn the basics of HTML, CSS and Javascript.`,
           name: `Basic Web Development`
         },{
+          curriculum: [],
           description: `Learn advanced techniques for DOM manupulation, OOP and advanced styling`,
           name: `Advanced Web Development`
         }
