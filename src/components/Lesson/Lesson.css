@@ -1,0 +1,8 @@
+.item {
+  display: flex!important;
+  color: #fff!important;
+}
+
+.item a.header {
+  text-align: left;
+}

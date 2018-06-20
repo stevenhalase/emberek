@@ -1,3 +1,36 @@
 .CourseList {
+  margin-top: 15px;
   padding: 15px;
+  position: relative;
+  background-color: #474787;
+  border-radius: 4px;
+}
+
+.CourseList .item {
+  padding: 15px!important;
+}
+
+.CourseList.empty {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.CourseList-expand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.CourseList-expand i {
+  line-height: 1;
+}
+
+.CourseList-expand:hover {
+  background-color: #343461!important;
 }

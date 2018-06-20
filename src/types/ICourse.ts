@@ -1,7 +1,8 @@
-import ICurriculumUnit from './ICurriculumUnit';
+import ILesson from './ILesson';
 
 export default interface ICourse {
   name: string;
   description: string;
-  curriculum: ICurriculumUnit[];
+  image: string;
+  lessons: ILesson[];
 }
