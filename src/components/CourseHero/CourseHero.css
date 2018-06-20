@@ -1,0 +1,27 @@
+.CourseHero {
+  padding: 30px 0;
+}
+
+.CourseHero .item {
+  background-color: #343461!important;
+  border-radius: 4px!important;
+  padding: 30px!important;
+}
+
+.item > .content {
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: center!important;
+  align-items: flex-start!important;
+}
+
+.header,
+.meta,
+.description,
+.divider {
+  color: #fff!important;
+}
+
+.meta {
+  text-align: left!important;
+}

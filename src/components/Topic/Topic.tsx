@@ -16,8 +16,8 @@ class Topic extends React.Component<IProps, object> {
       <Item>
         <Item.Image size='tiny' src={this.props.topic.image} />
         <Item.Content>
-          <Item.Header as='a'>{this.props.topic.name}</Item.Header>
-          <Item.Meta as='a'>{this.props.topic.description}</Item.Meta>
+          <Item.Header>{this.props.topic.name}</Item.Header>
+          <Item.Meta>{this.props.topic.description}</Item.Meta>
           <CourseList courses={this.props.topic.courses} />
         </Item.Content>
       </Item>

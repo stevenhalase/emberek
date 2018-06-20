@@ -12,5 +12,5 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/build'));
 
 server.listen(port, () => {
-    console.log('Server started at http://localhost:' + port);
+    // console.log('Server started at http://localhost:' + port);
 })

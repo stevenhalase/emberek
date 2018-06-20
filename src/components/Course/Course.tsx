@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { Item } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Item } from 'semantic-ui-react';
 
 import './Course.css';
 
@@ -17,8 +18,15 @@ class Course extends React.Component<IProps, object> {
       <Item>
         <Item.Image size='tiny' src={this.props.course.image} />
         <Item.Content>
-          <Item.Header as='a'>{this.props.course.name}</Item.Header>
-          <Item.Meta as='a'>{this.props.course.description}</Item.Meta>
+          <Item.Header>
+            <span>{this.props.course.name}</span>
+            <Link to={`/course/${this.props.course.id}`}>
+              <Button inverted={true}>
+                Start Course
+              </Button>
+            </Link>
+          </Item.Header>
+          <Item.Meta>{this.props.course.description}</Item.Meta>
           <LessonsList lessons={this.props.course.lessons} />
         </Item.Content>
       </Item>

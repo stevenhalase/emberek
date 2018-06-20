@@ -1,3 +1,6 @@
-.item a.header {
-  text-align: left;
+.item .header {
+  display: flex!important;
+  align-items: center!important;
+  justify-content: space-between!important;
+  width: 100%!important;
 }

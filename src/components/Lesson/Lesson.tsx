@@ -14,8 +14,8 @@ class Lesson extends React.Component<IProps, object> {
       <List.Item>
         <List.Icon name='folder outline' size='large' verticalAlign='middle' />
         <List.Content>
-          <List.Header className="Lesson-name" as='a'>{this.props.lesson.name}</List.Header>
-          <List.Description as='a'>{this.props.lesson.description}</List.Description>
+          <List.Header className="Lesson-name">{this.props.lesson.name}</List.Header>
+          <List.Description>{this.props.lesson.description}</List.Description>
         </List.Content>
       </List.Item>
     );
