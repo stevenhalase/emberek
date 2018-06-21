@@ -107,4 +107,20 @@ export default class CatalogService {
     return selectedCourse;
   }
 
+  public static GetLesson(lessonId: string) {
+    let selectedLesson = null;
+    for (const topic of catalog.topics) {
+      for (const subject of topic.subjects) {
+        for (const course of subject.courses) {
+          for (const lesson of course.lessons) {
+            if (lesson.id === lessonId) {
+              selectedLesson = lesson;
+            }
+          }
+        }
+      }
+    }
+    return selectedLesson;
+  }
+
 }
