@@ -1,12 +1,10 @@
 import * as React from 'react';
 
 import { Link } from 'react-router-dom';
-import { Button, Item } from 'semantic-ui-react';
-
+import { Button, List } from 'semantic-ui-react';
 import './Course.css';
 
 import ICourse from '../../types/ICourse';
-import LessonsList from '../LessonsList/LessonsList';
 
 interface IProps {
   course: ICourse;
@@ -15,21 +13,20 @@ interface IProps {
 class Course extends React.Component<IProps, object> {
   public render() {
     return (
-      <Item>
-        <Item.Image size='tiny' src={this.props.course.image} />
-        <Item.Content>
-          <Item.Header>
-            <span>{this.props.course.name}</span>
+      <List.Item>
+        <List.Icon name='folder outline' size='large' verticalAlign='middle' />
+        <List.Content>
+          <List.Header>{this.props.course.name}</List.Header>
+          <List.Description>
+            {this.props.course.description}
             <Link to={`/course/${this.props.course.id}`}>
-              <Button inverted={true}>
-                Start Course
+              <Button compact={true} inverted={true}>
+                View Course
               </Button>
             </Link>
-          </Item.Header>
-          <Item.Meta>{this.props.course.description}</Item.Meta>
-          <LessonsList lessons={this.props.course.lessons} />
-        </Item.Content>
-      </Item>
+          </List.Description>
+        </List.Content>
+      </List.Item>
     );
   }
 }

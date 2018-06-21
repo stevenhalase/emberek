@@ -1,0 +1,12 @@
+.CourseTabs .ui.segment {
+  background-color: #343461!important;
+  color: #fff;
+}
+
+.CourseTabs .ui.secondary.pointing.menu .active.item {
+  border-color: #706fd3!important;
+}
+
+.CourseTabs .ui.secondary.pointing.menu .active.item:hover {
+  border-color: #706fd3!important;
+}

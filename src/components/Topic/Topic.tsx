@@ -3,7 +3,7 @@ import './Topic.css'
 
 import { Item } from 'semantic-ui-react';
 
-import CourseList from '../CourseList/CourseList';
+import SubjectList from '../SubjectList/SubjectList';
 import ITopic from './../../types/ITopic';
 
 interface IProps {
@@ -18,7 +18,7 @@ class Topic extends React.Component<IProps, object> {
         <Item.Content>
           <Item.Header>{this.props.topic.name}</Item.Header>
           <Item.Meta>{this.props.topic.description}</Item.Meta>
-          <CourseList courses={this.props.topic.courses} />
+          <SubjectList subjects={this.props.topic.subjects} />
         </Item.Content>
       </Item>
     );

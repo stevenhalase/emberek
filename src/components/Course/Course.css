@@ -1,6 +1,19 @@
-.item .header {
+.item {
   display: flex!important;
-  align-items: center!important;
-  justify-content: space-between!important;
-  width: 100%!important;
+  color: #fff!important;
+}
+
+.item a.header {
+  text-align: left;
+}
+
+.item .description {
+  display: flex!important;
+  justify-content: center!important;
+  align-items: flex-start!important;
+  flex-direction: column!important;
+}
+
+.item .description a {
+  margin-top: 15px!important;
 }

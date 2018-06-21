@@ -1,22 +1,22 @@
-.CourseList {
+.SubjectList {
   margin-top: 15px;
   padding: 15px;
   position: relative;
-  background-color: #474787;
+  background-color: #474787!important;
   border-radius: 4px;
 }
 
-.CourseList .item {
+.SubjectList .item {
   padding: 15px!important;
 }
 
-.CourseList.empty {
+.SubjectList.empty {
   margin: 0;
   padding: 0;
   display: none;
 }
 
-.CourseList-expand {
+.SubjectList-expand {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,10 +27,10 @@
   cursor: pointer;
 }
 
-.CourseList-expand i {
+.SubjectList-expand i {
   line-height: 1;
 }
 
-.CourseList-expand:hover {
+.SubjectList-expand:hover {
   background-color: #343461!important;
 }

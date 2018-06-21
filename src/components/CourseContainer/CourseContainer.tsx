@@ -7,6 +7,7 @@ import CourseHero from '../CourseHero/CourseHero';
 import ICourse from './../../types/ICourse';
 
 import logoDark from '../../assets/images/logo_dark.png';
+import CourseTabs from '../CourseTabs/CourseTabs';
 
 interface IProps {
   course: ICourse;
@@ -19,6 +20,7 @@ class CourseContainer extends React.Component<IProps, object> {
         <Container>
           <Image src={logoDark} size='tiny' />
           <CourseHero course={this.props.course} />
+          <CourseTabs course={this.props.course}/>
         </Container>
       </div>
     );

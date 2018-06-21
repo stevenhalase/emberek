@@ -1,7 +1,7 @@
-import ICourse from './ICourse';
+import ISubject from './ISubject';
 
 export default interface ITopic {
-  courses: ICourse[];
+  subjects: ISubject[];
   description: string;
   image: string;
   name: string;
