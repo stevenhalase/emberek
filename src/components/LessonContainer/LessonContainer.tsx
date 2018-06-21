@@ -1,7 +1,10 @@
 import * as React from 'react';
 import './LessonContainer.css'
 
-import MonacoEditor from 'react-monaco-editor';
+import {Controlled as CodeMirror} from 'react-codemirror2';
+/* tslint:disable:no-var-requires */
+require('codemirror/mode/xml/xml');
+require('codemirror/mode/javascript/javascript');
 
 import { Container, Image } from 'semantic-ui-react';
 
@@ -18,29 +21,21 @@ class LessonContainer extends React.Component<IProps, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      code: `<html>
-        <head>
-          <title>Hello World</title>
-        </head>
-        <body></body>
-      </html>`
+      value: `<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+  <body></body>
+</html>`
     }
   }
 
-  public editorDidMount(editor: any, monaco: any) {
-    editor.focus();
-  }
-
-  public onChange(newValue: any, e:any) {
-    /* tslint:disable:no-console */
-    // console.log('onChange', newValue, e);
-  }
-
   public render() {
-    const code = this.state.code;
     const options = {
-      selectOnLineNumbers: true
-    };
+      lineNumbers: true,
+      mode: 'xml',
+      theme: 'material'
+    }
     return (
       <div className="LessonContainer">
         <Container>
@@ -48,19 +43,24 @@ class LessonContainer extends React.Component<IProps, any> {
           <div>
             {this.props.lesson.name}
           </div>
-          <MonacoEditor
-            width="800"
-            height="600"
-            language="html"
-            theme="vs-dark"
-            value={code}
+          <CodeMirror
+            value={this.state.value}
             options={options}
+            onBeforeChange={this.onBeforeChange}
             onChange={this.onChange}
-            editorDidMount={this.editorDidMount}
           />
         </Container>
       </div>
     );
+  }
+
+  public onBeforeChange = (editor: any, data: any, value: any) => {
+    this.setState({value});
+  }
+
+  public onChange = (editor: any, data: any, value: any) => {
+    /* tslint:disable:no-console */
+    console.log('onBeforeChange', value);
   }
 
 }
