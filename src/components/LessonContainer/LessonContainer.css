@@ -1,3 +1,83 @@
-.LessonContainer {
+.LessonContainer .LessonContainer-inner {
   padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.LessonContainer .LessonContainer-left {
+  width: 40%;
+  padding: 0 15px 0 0;
+}
+
+.LessonContainer .LessonContainer-right {
+  width: 60%;
+}
+
+.LessonContainer .step {
+  background-color: #343461!important;
+}
+
+.LessonContainer .step:after {
+  background-color: #343461!important;
+}
+
+.LessonContainer .ui.steps .step.active,
+.LessonContainer .ui.steps .step.active:after {
+  background-color: #3a3a6d!important;
+}
+
+.LessonContainer .ui.steps .step.active .title,
+.LessonContainer .ui.steps .step.active i {
+  color: #706fd3!important;
+}
+
+
+.LessonContainer .ui.steps .step .title,
+.LessonContainer .ui.steps .step i,
+.LessonContainer .ui.steps .step.disabled .title,
+.LessonContainer .ui.steps .step.disabled i {
+  color: #474787!important;
+}
+
+.LessonContainer .LessonContainer-info {
+  background-color: #343461!important;
+  border-radius: 4px!important;
+  padding: 30px!important;
+  color: #fff;
+}
+
+.LessonContainer .LessonContainer-title {
+  color: #474787!important;
+}
+
+.LessonContainer .LessonContainer-name {
+  color: #706fd3!important;
+  padding: 15px 0!important;
+  font-size: 24px!important;
+}
+
+.LessonContainer .LessonContainer-step {
+  background-color: #343461!important;
+  border-radius: 4px!important;
+  padding: 30px!important;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.LessonContainer .LessonContainer-step-header {
+  color: #706fd3!important;
+  padding: 15px 0!important;
+  font-size: 24px!important;
+}
+
+.LessonContainer .LessonContainer-step-body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.LessonContainer .LessonContainer-step-status{
+  font-size: 24px;
+  color: #706fd3!important;
 }

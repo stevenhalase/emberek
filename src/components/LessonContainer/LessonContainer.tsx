@@ -6,11 +6,12 @@ import {Controlled as CodeMirror} from 'react-codemirror2';
 require('codemirror/mode/xml/xml');
 require('codemirror/mode/javascript/javascript');
 
-import { Container, Image } from 'semantic-ui-react';
+import { Container, Icon, Image, Step } from 'semantic-ui-react';
 
 import ILesson from './../../types/ILesson';
 
 import logoDark from '../../assets/images/logo_dark.png';
+import IStep from './../../types/IStep';
 
 interface IProps {
   lesson: ILesson;
@@ -21,6 +22,7 @@ class LessonContainer extends React.Component<IProps, any> {
   constructor(props: any) {
     super(props);
     this.state = {
+      currentStage: this.props.lesson.stages[1],
       value: `<html>
   <head>
     <title>Hello World</title>
@@ -39,16 +41,71 @@ class LessonContainer extends React.Component<IProps, any> {
     return (
       <div className="LessonContainer">
         <Container>
-          <Image src={logoDark} size='tiny' />
-          <div>
-            {this.props.lesson.name}
+          <div className="LessonContainer-header">
+            <Image src={logoDark} size='tiny' />
+            <Step.Group size='small'>
+              {
+                this.props.lesson.stages.map((stage, ind) => {
+                  return (
+                    <Step active={stage.active} disabled={!stage.active && !stage.complete} key={ind}>
+                      <Icon name={stage.complete ? 'check circle outline' : 'circle outline'} />
+                      <Step.Content>
+                        <Step.Title>{stage.name}</Step.Title>
+                      </Step.Content>
+                    </Step>
+                  )
+                })
+              }
+            </Step.Group>
           </div>
-          <CodeMirror
-            value={this.state.value}
-            options={options}
-            onBeforeChange={this.onBeforeChange}
-            onChange={this.onChange}
-          />
+          <div className="LessonContainer-inner">
+            <div className="LessonContainer-left">
+              <div className="LessonContainer-info">
+                <div className="LessonContainer-header">
+                  <div className="LessonContainer-title">
+                    {this.props.lesson.name}
+                  </div>
+                  <div className="LessonContainer-name">
+                    {this.state.currentStage.name}
+                  </div>
+                </div>
+                <div className="LessonContainer-body">
+                  <div className="LessonContainer-description">
+                    {this.state.currentStage.description}
+                  </div>
+                </div>
+              </div>
+              <div className="LessonContainer-steps">
+                {
+                  this.state.currentStage.steps.map((step: IStep, ind: number) => {
+                    return (
+                      <div className="LessonContainer-step" key={ind}>
+                        <div className="LessonContainer-step-header">
+                          Steps
+                        </div>
+                        <div className="LessonContainer-step-body">
+                          <div className="LessonContainer-step-status">
+                            <Icon name={step.complete ? 'square outline' : 'check square outline'} />
+                          </div>
+                          <div className="LessonContainer-step-description">
+                            {step.description}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </div>
+            <div className="LessonContainer-right">
+              <CodeMirror
+                value={this.state.value}
+                options={options}
+                onBeforeChange={this.onBeforeChange}
+                onChange={this.onChange}
+              />
+            </div>
+          </div>
         </Container>
       </div>
     );

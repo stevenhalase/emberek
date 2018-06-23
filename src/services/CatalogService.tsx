@@ -20,26 +20,88 @@ const catalog = {
           courses: [
             {
               description: `Learn how to use the most basic building blocks of every website.`,
-              id: '0110',
+              id: '1100000',
               lessons: [
                 {
+                  complete: false,
                   description: `Introduction to HTML Elements`,
-                  id: '0111',
-                  name: `HTML Elements`
+                  id: '1110000',
+                  name: `HTML Elements`,
+                  stages: [
+                    {
+                      active: false,
+                      complete: true,
+                      description: `Welcome to the world of code! Last year, millions of learners from our community started with HTML. Why? HTML is the skeleton of all web pages. It's often the first language learned by marketers and designers and is core to front-end development work. If this is your first time touching code, we're excited for what you're about to create.`,
+                      id: '1111000',
+                      name: `What is HTML?`,
+                      steps: [
+                        {
+                          active: false,
+                          complete: false,
+                          description: `In the code editor to the right, type your name in between <h1> and </h1>, then press Run.`,
+                          id: '1111100',
+                          name: ``,
+                          validator: () => {
+                            return true;
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      active: true,
+                      complete: false,
+                      description: `Welcome to the world of code! Last year, millions of learners from our community started with HTML. Why? HTML is the skeleton of all web pages. It's often the first language learned by marketers and designers and is core to front-end development work. If this is your first time touching code, we're excited for what you're about to create.`,
+                      id: '1112000',
+                      name: `The Body`,
+                      steps: [
+                        {
+                          active: false,
+                          complete: false,
+                          description: `In the code editor to the right, type your name in between <h1> and </h1>, then press Run.`,
+                          id: '1111100',
+                          name: ``,
+                          validator: () => {
+                            return true;
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      active: false,
+                      complete: false,
+                      description: `HTML is organized as a collection of family tree relationships, including parent-child and siblings. As you saw in the last exercise, we placed the <p> tags within the <body> tags. When an element is contained inside another element, it is considered the child of that element. The child element is said to be nested inside of the parent element.`,
+                      id: '1113000',
+                      name: `HTML Structure`,
+                      steps: [
+                        {
+                          active: false,
+                          complete: false,
+                          description: `In the code editor to the right, type your name in between <h1> and </h1>, then press Run.`,
+                          id: '1111100',
+                          name: ``,
+                          title: ``,
+                          validator: () => {
+                            return true;
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
+                  complete: false,
                   description: `Introduction to HTML Header Elements`,
-                  id: '0112',
+                  id: '1120000',
                   name: `HTML Header Elements`
                 },
                 {
                   description: `Introduction to HTML Paragraph Elements`,
-                  id: '0113',
+                  id: '130000',
                   name: `HTML Paragraph Elements`
                 },
                 {
                   description: `Introduction to HTML Element Attributes`,
-                  id: '0114',
+                  id: '1140000',
                   name: `HTML Element Attributes`
                 }
               ],
@@ -47,13 +109,13 @@ const catalog = {
             },
             {
               description: `Learn details on how to use the most basic building blocks of every website.`,
-              id: '0120',
+              id: '1200000',
               lessons: [],
               name: `HTML Elements Deep Dive`
             }
           ],
           description: `Learn your way around the DOM.`,
-          id: '0100',
+          id: '1000000',
           image: html5,
           name: `HTML5`
         },
@@ -61,19 +123,19 @@ const catalog = {
           courses: [
             {
               description: `Learn how to use CSS Selectors to style elements.`,
-              id: '0210',
+              id: '2100000',
               lessons: [],
               name: `CSS Selectors`
             },
             {
               description: `Learn how to use Classes to style elements.`,
-              id: '0220',
+              id: '2200000',
               lessons: [],
               name: `CSS Classes`
             }
           ],
           description: `Learn how to style pages.`,
-          id: '0200',
+          id: '2000000',
           image: css3,
           name: `CSS3`,
         }
