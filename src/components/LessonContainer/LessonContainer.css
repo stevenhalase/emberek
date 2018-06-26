@@ -3,15 +3,34 @@
   display: flex;
   justify-content: center;
   align-content: flex-start;
+  position: relative;
 }
 
 .LessonContainer .LessonContainer-left {
   width: 40%;
+  height: 100%;
   padding: 0 15px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 .LessonContainer .LessonContainer-right {
   width: 60%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.react-codemirror2 {
+  height: 100%;
+}
+
+.CodeMirror {
+  height: 100%!important;
 }
 
 .LessonContainer .step {

@@ -22,6 +22,7 @@ class LessonContainer extends React.Component<IProps, any> {
   constructor(props: any) {
     super(props);
     this.state = {
+      codeMirror: React.createRef(),
       currentStage: this.props.lesson.stages[1],
       value: `<html>
   <head>
@@ -36,7 +37,8 @@ class LessonContainer extends React.Component<IProps, any> {
     const options = {
       lineNumbers: true,
       mode: 'xml',
-      theme: 'material'
+      theme: 'material',
+      viewportMargin: Infinity
     }
     return (
       <div className="LessonContainer">
@@ -103,6 +105,7 @@ class LessonContainer extends React.Component<IProps, any> {
                 options={options}
                 onBeforeChange={this.onBeforeChange}
                 onChange={this.onChange}
+                ref={this.state.codeMirror}
               />
             </div>
           </div>
