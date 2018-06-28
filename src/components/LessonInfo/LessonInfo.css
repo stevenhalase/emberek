@@ -1,0 +1,16 @@
+.LessonInfo {
+  background-color: #343461!important;
+  border-radius: 4px!important;
+  padding: 30px!important;
+  color: #fff;
+}
+
+.LessonInfo .LessonInfo-title {
+  color: #474787!important;
+}
+
+.LessonInfo .LessonInfo-name {
+  color: #706fd3!important;
+  padding: 15px 0!important;
+  font-size: 24px!important;
+}

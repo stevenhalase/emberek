@@ -1,0 +1,28 @@
+.LessonSteps .LessonSteps-step {
+  background-color: #343461!important;
+  border-radius: 4px!important;
+  padding: 30px!important;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.LessonSteps .LessonSteps-step-header {
+  color: #706fd3!important;
+  padding: 15px 0!important;
+  font-size: 24px!important;
+}
+
+.LessonSteps .LessonSteps-step-body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.LessonSteps .LessonSteps-step-description {
+  padding: 0 5px;
+}
+
+.LessonSteps .LessonSteps-step-status{
+  font-size: 24px;
+  color: #706fd3!important;
+}

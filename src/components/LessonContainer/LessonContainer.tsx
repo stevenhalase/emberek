@@ -6,12 +6,15 @@ import {Controlled as CodeMirror} from 'react-codemirror2';
 require('codemirror/mode/xml/xml');
 require('codemirror/mode/javascript/javascript');
 
-import { Container, Icon, Image, Step } from 'semantic-ui-react';
+import { Button, Container, Icon, Image } from 'semantic-ui-react';
 
 import ILesson from './../../types/ILesson';
 
 import logoDark from '../../assets/images/logo_dark.png';
 import IStep from './../../types/IStep';
+import LessonInfo from './../LessonInfo/LessonInfo';
+import LessonStages from './../LessonStages/LessonStages';
+import LessonSteps from './../LessonSteps/LessonSteps';
 
 interface IProps {
   lesson: ILesson;
@@ -24,6 +27,7 @@ class LessonContainer extends React.Component<IProps, any> {
     this.state = {
       codeMirror: React.createRef(),
       currentStage: this.props.lesson.stages[1],
+      currentStep: this.props.lesson.stages[1].steps[0],
       value: `<html>
   <head>
     <title>Hello World</title>
@@ -31,6 +35,8 @@ class LessonContainer extends React.Component<IProps, any> {
   <body></body>
 </html>`
     }
+
+    this.validate = this.validate.bind(this);
   }
 
   public render() {
@@ -45,59 +51,20 @@ class LessonContainer extends React.Component<IProps, any> {
         <Container>
           <div className="LessonContainer-header">
             <Image src={logoDark} size='tiny' />
-            <Step.Group size='small'>
-              {
-                this.props.lesson.stages.map((stage, ind) => {
-                  return (
-                    <Step active={stage.active} disabled={!stage.active && !stage.complete} key={ind}>
-                      <Icon name={stage.complete ? 'check circle outline' : 'circle outline'} />
-                      <Step.Content>
-                        <Step.Title>{stage.name}</Step.Title>
-                      </Step.Content>
-                    </Step>
-                  )
-                })
-              }
-            </Step.Group>
+            <LessonStages stages={this.props.lesson.stages} />
+            <div className="LessonContainer-navigation">
+              <Button onClick={this.validate} compact={true} inverted={true}>
+                Validate
+              </Button>
+              <Button compact={true} inverted={true} disabled={true}>
+                Next
+              </Button>
+            </div>
           </div>
           <div className="LessonContainer-inner">
             <div className="LessonContainer-left">
-              <div className="LessonContainer-info">
-                <div className="LessonContainer-header">
-                  <div className="LessonContainer-title">
-                    {this.props.lesson.name}
-                  </div>
-                  <div className="LessonContainer-name">
-                    {this.state.currentStage.name}
-                  </div>
-                </div>
-                <div className="LessonContainer-body">
-                  <div className="LessonContainer-description">
-                    {this.state.currentStage.description}
-                  </div>
-                </div>
-              </div>
-              <div className="LessonContainer-steps">
-                {
-                  this.state.currentStage.steps.map((step: IStep, ind: number) => {
-                    return (
-                      <div className="LessonContainer-step" key={ind}>
-                        <div className="LessonContainer-step-header">
-                          Steps
-                        </div>
-                        <div className="LessonContainer-step-body">
-                          <div className="LessonContainer-step-status">
-                            <Icon name={step.complete ? 'square outline' : 'check square outline'} />
-                          </div>
-                          <div className="LessonContainer-step-description">
-                            {step.description}
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  })
-                }
-              </div>
+              <LessonInfo lesson={this.props.lesson} currentStage={this.state.currentStage} />
+              <LessonSteps currentStage={this.state.currentStage} />
             </div>
             <div className="LessonContainer-right">
               <CodeMirror
@@ -112,6 +79,10 @@ class LessonContainer extends React.Component<IProps, any> {
         </Container>
       </div>
     );
+  }
+
+  public validate = () => {
+    return this.state.currentStep.validator();
   }
 
   public onBeforeChange = (editor: any, data: any, value: any) => {

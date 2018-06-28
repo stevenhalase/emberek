@@ -1,0 +1,29 @@
+.LessonStages {
+  margin-top: 15px;
+}
+
+.LessonStages .step {
+  background-color: #343461!important;
+}
+
+.LessonStages .step:after {
+  background-color: #343461!important;
+}
+
+.LessonStages .ui.steps .step.active,
+.LessonStages .ui.steps .step.active:after {
+  background-color: #3a3a6d!important;
+}
+
+.LessonStages .ui.steps .step.active .title,
+.LessonStages .ui.steps .step.active i {
+  color: #706fd3!important;
+}
+
+
+.LessonStages .ui.steps .step .title,
+.LessonStages .ui.steps .step i,
+.LessonStages .ui.steps .step.disabled .title,
+.LessonStages .ui.steps .step.disabled i {
+  color: #474787!important;
+}

@@ -1,5 +1,9 @@
-.LessonContainer .LessonContainer-inner {
+.LessonContainer {
   padding: 30px 0;
+}
+
+.LessonContainer .LessonContainer-inner {
+  padding: 15px 0 30px;
   display: flex;
   justify-content: center;
   align-content: flex-start;
@@ -33,70 +37,23 @@
   height: 100%!important;
 }
 
-.LessonContainer .step {
-  background-color: #343461!important;
-}
-
-.LessonContainer .step:after {
-  background-color: #343461!important;
-}
-
-.LessonContainer .ui.steps .step.active,
-.LessonContainer .ui.steps .step.active:after {
-  background-color: #3a3a6d!important;
-}
-
-.LessonContainer .ui.steps .step.active .title,
-.LessonContainer .ui.steps .step.active i {
-  color: #706fd3!important;
-}
-
-
-.LessonContainer .ui.steps .step .title,
-.LessonContainer .ui.steps .step i,
-.LessonContainer .ui.steps .step.disabled .title,
-.LessonContainer .ui.steps .step.disabled i {
-  color: #474787!important;
-}
-
-.LessonContainer .LessonContainer-info {
+.LessonContainer .LessonContainer-navigation {
   background-color: #343461!important;
   border-radius: 4px!important;
-  padding: 30px!important;
-  color: #fff;
-}
-
-.LessonContainer .LessonContainer-title {
-  color: #474787!important;
-}
-
-.LessonContainer .LessonContainer-name {
-  color: #706fd3!important;
-  padding: 15px 0!important;
-  font-size: 24px!important;
-}
-
-.LessonContainer .LessonContainer-step {
-  background-color: #343461!important;
-  border-radius: 4px!important;
-  padding: 30px!important;
-  color: #fff;
+  padding: 10px!important;
   margin-top: 15px;
-}
-
-.LessonContainer .LessonContainer-step-header {
-  color: #706fd3!important;
-  padding: 15px 0!important;
-  font-size: 24px!important;
-}
-
-.LessonContainer .LessonContainer-step-body {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.LessonContainer .LessonContainer-step-status{
-  font-size: 24px;
+.LessonContainer .LessonContainer-navigation .ui.compact.button {
   color: #706fd3!important;
+  box-shadow: 0px 0px 0px 2px #706fd3 inset !important;
+}
+
+.LessonContainer .LessonContainer-navigation .ui.compact.button:hover,
+.LessonContainer .LessonContainer-navigation .ui.compact.button:focus {
+  background: #706fd3!important;
+  color: #fff!important;
 }

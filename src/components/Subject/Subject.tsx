@@ -21,7 +21,7 @@ class Subject extends React.Component<IProps, object> {
           <Item.Header>
             <span>{this.props.subject.name}</span>
             <Link to={`/subject/${this.props.subject.id}`}>
-              <Button className="Subject-button" compact={true} inverted={true}>
+              <Button className="Subject-button" size="small" compact={true} inverted={true}>
                 View Subject
               </Button>
             </Link>

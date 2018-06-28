@@ -20,7 +20,7 @@ class Course extends React.Component<IProps, object> {
           <List.Description>
             {this.props.course.description}
             <Link to={`/course/${this.props.course.id}`}>
-              <Button compact={true} inverted={true}>
+              <Button size="mini" compact={true} inverted={true}>
                 View Course
               </Button>
             </Link>
